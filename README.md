@@ -4,7 +4,7 @@ This repository contains the source code behind the redirect worker running
 [std.rs][s]. Currently it supports the following redirects:
 
 | From                       | To                                                      |
-| -------------------------- | ------------------------------------------------------- |
+| :------------------------- | :------------------------------------------------------ |
 | `https://std.rs`           | `https://doc.rust-lang.org/stable/std/`                 |
 | `https://n.std.rs`         | `https://doc.rust-lang.org/nightly/std/`                |
 | `https://std.rs/n`         | `https://doc.rust-lang.org/nightly/std/`                |

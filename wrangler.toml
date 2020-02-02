@@ -1,0 +1,6 @@
+name = "stdrs"
+type = "webpack"
+webpack_config = "./webpack.config.js"
+account_id = "7cd3fa5984d97d6870626042cb75cd9a"
+zone_id = "768011d1fc62b2a4b57e3eec232494db"
+route = "*.std.rs/*"

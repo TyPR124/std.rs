@@ -8,6 +8,8 @@
     "dev": "cross-env NODE_ENV=development webpack -w",
     "test": "jest",
     "test:watch": "jest --watch",
+    "prettier": "prettier --check **/*.{js,ts,md}",
+    "format": "prettier --write **/*.{js,ts,md}",
     "clean": "rimraf dist"
   },
   "husky": {

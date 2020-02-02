@@ -13,6 +13,8 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
+      - name: Prettier
+        run: npm run prettier
   deploy:
     runs-on: ubuntu-latest
     needs: test

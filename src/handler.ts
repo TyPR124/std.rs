@@ -6,9 +6,7 @@ export function handleRequest(request: Request): Response {
     isNightly ? 'nightly' : 'stable'
   }/std/`;
   const query = pathname.replace(/^(?:\/n)?\//, '');
-  const finalUrl = `${base}${
-    query ? `?search=${encodeURIComponent(query)}` : ''
-  }`;
+  const finalUrl = `${base}${query ? `?search=${query}` : ''}`;
 
   return Response.redirect(finalUrl, 301);
 }

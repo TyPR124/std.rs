@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "preview": "wrangler preview --watch",
+    "publish": "wrangler publish",
     "build": "webpack",
     "dev": "cross-env NODE_ENV=development webpack -w",
     "clean": "rimraf dist"

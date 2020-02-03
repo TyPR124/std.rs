@@ -8,13 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install
-        run: npm ci
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       - name: Test
-        run: npm run test
-      - name: Build
-        run: npm run build
-      - name: Prettier
-        run: npm run prettier
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+      - name: Format
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
   deploy:
     runs-on: ubuntu-latest
     needs: test

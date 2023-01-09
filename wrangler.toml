@@ -1,6 +1,22 @@
-name = "stdrs"
-type = "webpack"
-webpack_config = "./webpack.config.js"
-account_id = "7cd3fa5984d97d6870626042cb75cd9a"
-zone_id = "768011d1fc62b2a4b57e3eec232494db"
-route = "*std.rs/*"
+# See https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "std-rs-redirect-worker"
+compatibility_date = "2022-11-30"
+workers_dev = false
+main = "build/worker/shim.mjs"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[env.production]
+routes = [
+    { pattern = "std.rs", custom_domain = true },
+    { pattern = "n.std.rs", custom_domain = true }
+]
+
+[env.staging]
+name = "std-rs-redirect-worker-staging"
+routes = [
+    { pattern = "std-rs-redirect-worker-staging.stdrs.dev", custom_domain = true },
+    { pattern = "n.std-rs-redirect-worker-staging.stdrs.dev", custom_domain = true }
+]

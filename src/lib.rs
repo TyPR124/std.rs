@@ -23,7 +23,7 @@ pub fn redirect(url: &Url) -> Url {
         if query.is_empty() {
             "".into()
         } else {
-            format!("?search={}", query)
+            format!("?search={query}")
         }
     ))
     .unwrap()

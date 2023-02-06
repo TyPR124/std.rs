@@ -1,0 +1,15 @@
+[package]
+name = "std-rs-redirect-worker"
+version = "0.1.0"
+authors = ["Tyler Ruckinger"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+worker = "0.0.12"
+
+[profile.release]
+opt-level = "s" # Small code size
+lto = true # Enable link-time-optimizations
